@@ -1,10 +1,23 @@
-/* 모바일 최적화를 위한 기본 설정 */
-body {
+/* 1. 기본 스타일 재설정: 브라우저가 기본으로 적용하는 여백 제거 */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* 배경색 */
-    max-withd: 1920px;
+    /* 모바일 기기에서 뷰포트 너비를 정확히 100%로 설정 */
+    width: 100%; 
+    height: 100%;
+    /* 스크롤바가 필요 없는 경우 overflow-x를 숨깁니다. */
+    overflow-x: hidden; 
 }
+
+
+/* 2. 이미지 반응형 설정: 이미지가 화면 너비를 초과하지 않도록 설정 */
+/* poster.jpg를 불러오는 img 태그에 적용됩니다. */
+img {
+    max-width: 100%; /* 가장 중요! 이미지의 최대 너비를 부모 컨테이너의 100%로 제한 */
+    height: auto;    /* 이미지의 세로 비율을 자동으로 유지 */
+    display: block;  /* 이미지 아래에 생기는 불필요한 공백을 제거 */
+}
+
 
 .invitation-container {
     /* 이미지를 배경으로 사용 */
@@ -24,6 +37,8 @@ body {
     color: white; 
     text-align: center;
 }
+
+
 
 /* 추가 텍스트 및 버튼 스타일 */
 .main-text {
