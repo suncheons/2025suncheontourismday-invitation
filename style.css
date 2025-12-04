@@ -1,100 +1,74 @@
 /* 1. 기본 스타일 재설정: 브라우저가 기본으로 적용하는 여백 제거 */
-html, body {
-    margin: 0;
-    padding: 0;
-    /* 모바일 기기에서 뷰포트 너비를 정확히 100%로 설정 */
-    width: 100%; 
-    height: 100%;
-    /* 스크롤바가 필요 없는 경우 overflow-x를 숨깁니다. */
-    overflow-x: hidden; 
-}
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* 가로 스크롤바 숨김 */
+            font-family: Arial, sans-serif; /* 기본 글꼴 설정 */
+            background-color: #f0f0f0; /* 전체 페이지 배경색 (선택 사항) */
+        }
+        
+        /* 2. 메인 컨테이너 설정: 모바일 중앙 정렬 및 최대 폭 제한 */
+        .invitation-container {
+            /* ❗ 배경 이미지 속성은 제거되었습니다. ㄹ.jpg는 img 태그로 삽입됩니다. */
+            
+            /* 모바일 화면 높이에 맞춤 (내용이 100vh보다 작을 때 최소 높이 유지) */
+            min-height: 100vh;
+            max-width: 600px; /* PC에서 볼 때 최대 폭 제한 */
+            margin: 0 auto; /* 가운데 정렬 */
+            padding: 20px;
+            box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+            
+            /* 텍스트 색상 및 스타일 조정 */
+            text-align: center;
+            background-color: white; /* 컨테이너 배경색 (선택 사항) */
+        }
+        
+        /* 3. 비디오 스타일: 컨테이너 너비에 맞추고 비율 유지 */
+        .video-box {
+            width: 100%; 
+            height: auto; /* 비율 유지 */
+            display: block; /* 블록 요소로 설정 */
+            margin-bottom: 20px; /* 비디오 아래 여백 */
+        }
 
+        /* 4. 이미지 반응형 설정 */
+        .main-img {
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto 20px auto; /* 가운데 정렬 및 아래 여백 */
+        }
 
-/* 2. 이미지 반응형 설정: 이미지가 화면 너비를 초과하지 않도록 설정 */
-/* poster.jpg를 불러오는 img 태그에 적용됩니다. */
-img {
-    max-width: 100%; /* 가장 중요! 이미지의 최대 너비를 부모 컨테이너의 100%로 제한 */
-    height: auto;    /* 이미지의 세로 비율을 자동으로 유지 */
-    display: block;  /* 이미지 아래에 생기는 불필요한 공백을 제거 */
-}
-
-
-.invitation-container {
-    /* 이미지를 배경으로 사용 */
-    background-image: url('ㄹ.jpg'); 
-    background-size: cover; /* 화면을 꽉 채우도록 설정 */
-    background-repeat: no-repeat;
-    background-position: center center;
-    
-    /* 모바일 화면 높이에 맞춤 */
-    min-height: 100vh; 
-    max-width: 600px; /* PC에서 볼 때 최대 폭 제한 */
-    margin: 0 auto; /* 가운데 정렬 */
-    padding: 20px;
-    box-sizing: border-box;
-    
-    /* 텍스트 색상 및 스타일 조정 */
-    font-color: #000; 
-    text-align: center;
-}
-.invitelink {
-    backgournd: #5d6d7e;
-    color:#000;
-    width:40%;
-    display:block;
-    
-    
-
-
-}
-
-
-/* 추가 텍스트 및 버튼 스타일 */
-.main-text {
-  color: #000; 
-}
-p {
-  color: #000;    
-}    
-.contact-button {
-    display: block;
-    width: 80%;
-    padding: 10px;
-    margin: 20px auto;
-    background-color: #5d6d7e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-/* style.css 파일에 추가 */
-.main-img {
-    width: 100%;       /* 컨테이너 너비에 맞춤 */
-    height: auto;      /* 이미지 비율 유지 */
-    display: block;    /* 불필요한 공백 제거 */
-}
-
-
-/* Body와 HTML이 화면 전체를 차지하도록 기본 여백 제거 */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* 스크롤바가 생기지 않도록 숨김 */
-}
-
-/* 비디오가 화면 전체를 채우도록 설정 */
-.video-box {
-    /* 화면을 꽉 채우는 위치 및 크기 설정 */
-    position: fixed; /* 뷰포트 기준으로 위치 고정 */
-    top: 0;
-    left: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    
-    /* 화면 비율이 다를 때 비디오가 잘리더라도 전체를 덮도록 설정 */
-    object-fit: cover;
-    
-    /* 비디오가 다른 콘텐츠 뒤에 위치하도록 설정 (선택 사항) */
-    z-index: -1; 
-}
+        /* 5. 텍스트 및 버튼 스타일 */
+        .main-text {
+            color: #000;
+            margin-top: 20px;
+        }
+        p {
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .contact-button {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #5d6d7e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        /* invitelink 클래스 수정 (오타 수정: backgournd -> background) */
+        .invitelink {
+            background: #5d6d7e;
+            color: #000;
+            width: 40%;
+            display: block;
+            margin: 10px auto; /* 중앙 정렬을 위한 추가 */
+            padding: 5px;
+        }
