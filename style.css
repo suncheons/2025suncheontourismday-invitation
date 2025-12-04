@@ -1,73 +1,72 @@
-/* 1. 기본 스타일 재설정: 브라우저가 기본으로 적용하는 여백 제거 */
+/* 1. 기본 스타일 재설정 및 오버플로우 해결 */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    /* height: 100%; 대신 content-fit에 맡기거나, 필요하다면 최소 높이만 지정합니다. */
-    overflow-x: hidden; /* 가로 스크롤만 방지하고, 세로 스크롤은 허용합니다. */
+    /* height: 100% 제거: 콘텐츠가 화면을 넘어가면 세로 스크롤 가능하도록 */
+    overflow-x: hidden; /* 가로 스크롤만 방지 */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
-        
-        /* 2. 메인 컨테이너 설정: 모바일 중앙 정렬 및 최대 폭 제한 */
-        .invitation-container {
-            /* ❗ 배경 이미지 속성은 제거되었습니다. ㄹ.jpg는 img 태그로 삽입됩니다. */
-            
-            /* 모바일 화면 높이에 맞춤 (내용이 100vh보다 작을 때 최소 높이 유지) */
-            min-height: 100vh;
-            max-width: 600px; /* PC에서 볼 때 최대 폭 제한 */
-            margin: 0 auto; /* 가운데 정렬 */
-            padding: 20px;
-            box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
-            
-            /* 텍스트 색상 및 스타일 조정 */
-            text-align: center;
-            background-color: white; /* 컨테이너 배경색 (선택 사항) */
-        }
-        
-        /* 3. 비디오 스타일: 컨테이너 너비에 맞추고 비율 유지 */
-        .video-box {
-            width: 100%; 
-            height: auto; /* 비율 유지 */
-            display: block; /* 블록 요소로 설정 */
-            margin-bottom: 20px; /* 비디오 아래 여백 */
-        }
 
-        /* 4. 이미지 반응형 설정 */
-        .main-img {
-            max-width: 100%; 
-            width: 100%;
-            height: auto; 
-            display: block; 
-            margin: 0 auto 20px auto; /* 가운데 정렬 및 아래 여백 */
-        }
+/* 2. 메인 컨테이너 설정: 중앙 정렬 및 최대 폭 제한 */
+.invitation-container {
+    max-width: 600px; /* PC에서 볼 때 최대 폭 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 0; /* padding은 콘텐츠 내에서 관리 (스크롤 문제 방지) */
+    box-sizing: border-box; 
+    text-align: center;
+    background-color: white; /* 컨테이너 배경색 */
+    /* 비디오/이미지 포함 컨테이너의 최소 높이 (선택 사항, 필요시 유지) */
+    min-height: 100vh;
+}
 
-        /* 5. 텍스트 및 버튼 스타일 */
-        .main-text {
-            color: #000;
-            margin-top: 20px;
-        }
-        p {
-            color: #000;
-            margin-bottom: 20px;
-        }
-        .contact-button {
-            display: block;
-            width: 80%;
-            padding: 10px;
-            margin: 20px auto;
-            background-color: #5d6d7e;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-        
-        /* invitelink 클래스 수정 (오타 수정: backgournd -> background) */
-        .invitelink {
-            background: #5d6d7e;
-            color: #000;
-            width: 40%;
-            display: block;
-            margin: 10px auto; /* 중앙 정렬을 위한 추가 */
-            padding: 5px;
-        }
+/* 3. 비디오 스타일: 컨테이너 너비에 맞추고 비율 유지 */
+.video-box {
+    width: 100%;
+    height: auto; /* 비율 유지 */
+    display: block;
+    margin-bottom: -4px; /* 비디오 아래 미세한 공백 제거 (이미지 간 공백 문제 해결) */
+}
+
+/* 4. 이미지 컨테이너 스타일 */
+.main-img {
+    max-width: 100%; /* 이미지가 부모 컨테이너를 벗어나지 않도록 강제! */
+    width: 100%;
+    height: auto;
+    display: block;
+    /* margin: 0 auto; 이미지를 감싸는 div에 적용하여 중앙 정렬 */
+    padding: 20px; /* 여기서 패딩을 적용하여 이미지와 경계에 여백 생성 */
+    box-sizing: border-box;
+}
+
+/* 5. 이미지 태그 자체 스타일 (a 태그로 감쌌으므로 a 태그 내 img에 적용) */
+.main-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 6. 버튼 스타일 */
+.contact-button {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #5d6d7e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* 7. 기타 텍스트 스타일 */
+.main-text {
+    color: #000;
+    margin-top: 20px;
+}
+p {
+    color: #000;
+    margin-bottom: 20px;
+}
