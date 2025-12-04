@@ -38,6 +38,7 @@ html, body {
     /* margin: 0 auto; 이미지를 감싸는 div에 적용하여 중앙 정렬 */
     padding: 20px; /* 여기서 패딩을 적용하여 이미지와 경계에 여백 생성 */
     box-sizing: border-box;
+    margin-bottom:0; 
 }
 
 /* 5. 이미지 태그 자체 스타일 (a 태그로 감쌌으므로 a 태그 내 img에 적용) */
@@ -75,6 +76,7 @@ p {
     margin: 20px auto;
     padding: 0 20px;
     box-sizing: border-box;
+    color: #fff;
 }
 
 .map-container iframe {
