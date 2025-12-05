@@ -83,3 +83,51 @@ p {
     width: 100%; /* iframe 너비를 컨테이너에 맞춤 */
     display: block;
 }
+.map-container { 
+    max-width: 100%;
+    margin: 20px auto; 
+    padding: 0 20px; 
+    box-sizing: border-box;
+    position: relative; /* ❗ 자식 요소(.remove-box)의 기준점 설정 */
+}
+
+/* 지도 스크립트의 mapWidth를 100%로 수정했음을 다시 한 번 가정합니다. */
+#daumRoughmapContainer1764835269141 {
+    width: 100% !important; 
+    height: 360px !important; 
+    display: block;
+}
+
+/* 🌟 카카오맵 하단 정보 가리는 박스 (.remove-box) 🌟 */
+.remove-box {
+    /* ❗ 지도 하단의 주소/전화번호 영역 크기를 보고 높이(Height)를 조절하세요. */
+    height: 65px; /* 덮어씌울 높이 (이미지를 보고 조절) */ 
+    width: 100%;
+    
+    /* 포지션 설정: 지도를 감싸는 .map-container를 기준으로 하단에 고정 */
+    position: absolute;
+    bottom: 0; /* 하단에 붙이기 */
+    left: 0;
+    
+    /* 덮어씌울 배경색 설정 (지도의 배경색과 일치해야 자연스러움) */
+    background-color: white; 
+    
+    /* 지도 위에 보이도록 인덱스 설정 */
+    z-index: 10; 
+    
+    /* 새 정보가 중앙에 표시되도록 설정 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    flex-direction: column; /* 내용을 세로로 쌓기 */
+    
+    padding: 5px 0 0 0; /* 상단 패딩으로 덮어씌울 영역 조정 */
+}
+
+/* 🌟 새로운 주소/문의 정보 (.new-info) 스타일 🌟 */
+.new-info p {
+    margin: 2px 0; /* 줄 간격 좁히기 */
+    color: #000;
+    font-size: 0.9em; /* 글자 크기 조정 */
+    text-align: center;
+}
