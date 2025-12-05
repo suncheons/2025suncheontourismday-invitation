@@ -21,49 +21,52 @@
         </div>
         
         <div class="map-container" >
-                   <div class="map-container">
 
-            <!-- * 카카오맵 - 지도퍼가기 -->
-
-            <!-- 1. 지도 노드 -->
-
-            <div id="daumRoughmapContainer1764835269141" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
+                    <!-- * 카카오맵 - 지도퍼가기 -->
+        
+                    <!-- 1. 지도 노드 -->
+        
+                    <div id="daumRoughmapContainer1764835269141" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+        
+                    
+        
+                    <!--
+        
+                    2. 설치 스크립트
+        
+                    * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+        
+                    -->
+        
+                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+        
+                    
+        
+                    <!-- 3. 실행 스크립트 -->
+        
+                    <script charset="UTF-8">
+        
+                    new daum.roughmap.Lander({
+        
+                    "timestamp" : "1764835269141",
+        
+                    "key" : "db3r9yxcvqn",
+        
+                    "mapWidth" : "100%",
+        
+                    "mapHeight" : "360"
+        
+                    }).render();
+        
+                    </script>
+            <div class="remove-box">
+                <div class="new-info">
+                    <p>주소 : 전남 순천시 동천저류지길 37</p>
+                    <p>문의 : 061-749-5789(관광과)</p>
+                </div>
+            </div>
             
-
-            <!--
-
-            2. 설치 스크립트
-
-            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-
-            -->
-
-            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-            
-
-            <!-- 3. 실행 스크립트 -->
-
-            <script charset="UTF-8">
-
-            new daum.roughmap.Lander({
-
-            "timestamp" : "1764835269141",
-
-            "key" : "db3r9yxcvqn",
-
-            "mapWidth" : "100%",
-
-            "mapHeight" : "360"
-
-            }).render();
-
-            </script>
-
         </div>
-            <p>주소 : 전남 순천시 동천저류지길 37 </p>
-            <p stlye="margin-bottom:80px">문의 전화: 749-5789(관광과)</p>
         
 
     </div>
